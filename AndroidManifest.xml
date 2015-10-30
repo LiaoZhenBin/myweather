@@ -24,6 +24,9 @@
             </intent-filter>
         </activity>
         <activity android:name="cn.liao.myweather.activity.WeatherActivity"/>
+        
+        <service android:name="cn.liao.myweather.service.AutoUpdateService"/>
+        <receiver android:name="cn.liao.myweather.receiver.AutoUpdateReceiver"/>
     </application>
 
 </manifest>

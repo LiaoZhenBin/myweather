@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import cn.liao.myweather.R;
+import cn.liao.myweather.service.AutoUpdateService;
 import cn.liao.myweather.util.HttpCallbackListener;
 import cn.liao.myweather.util.HttpUtil;
 import cn.liao.myweather.util.Utility;
@@ -142,6 +143,9 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		current_date.setText(preferences.getString("current_time", ""));
 		weather_info_layout.setVisibility(View.VISIBLE);
 		city_name.setVisibility(View.VISIBLE);
+		
+		Intent intent = new Intent(this, AutoUpdateService.class);
+		startService(intent);
 	}
 
 	@Override
